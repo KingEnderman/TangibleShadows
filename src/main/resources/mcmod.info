@@ -1,0 +1,16 @@
+[
+{
+  "modid": "TangibleShadows",
+  "name": "Tangible Shadows",
+  "description": "Shadow Tools, Weapons, and Armor",
+  "version": "1.7.10-2.0",
+  "mcversion": "1.7.10",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["KingEnderman"],
+  "credits": "KingEnderman",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
