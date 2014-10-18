@@ -46,6 +46,8 @@ public class TangibleShadows
     
     public static Item shadowPickaxe;
     
+    public static Item multiPass;
+    
     public static ItemArmor shadowHelmet;
     
     public static ItemArmor shadowChestplate;
@@ -76,12 +78,23 @@ public class TangibleShadows
     
     public static Item shadowShield;
     
+    public static Item gleamingHelmet;
+    
+    public static Item gleamingChestplate;
+    
+    public static Item gleamingLegs;
+    
+    public static Item gleamingBoots;
+    
+    public static Item cubicZirconium;
+    
     ShadowEventHandler Handler = new ShadowEventHandler();
     
     ShadowDeathEventHandler Handler1 = new ShadowDeathEventHandler();
     
     static ToolMaterial shadowToolMaterial = EnumHelper.addToolMaterial("shadowToolMaterial", 4, 200000, 25.0f, 8.0f, 20);
     static ArmorMaterial shadowArmorMaterial = EnumHelper.addArmorMaterial("shadowArmorMaterial", 66, new int[]{18, 18, 18, 18}, 200);
+    static ArmorMaterial gleamingArmorMaterial = EnumHelper.addArmorMaterial("gleamingArmorMaterial", 33, new int[]{16, 16, 16, 16}, 200);
     static ToolMaterial shadowToolMaterial2 = EnumHelper.addToolMaterial("shadowToolMaterial2", 4, 200000, 20.0f, 10.0f, 18);
     static ToolMaterial shadowToolMaterial3 = EnumHelper.addToolMaterial("shadowToolMaterial3", 4, 200000, 20.0f, 9.0f, 18);
     static ToolMaterial shadowToolMaterial4 = EnumHelper.addToolMaterial("shadowToolMaterial4", 4, 200000, 20.0f, 12.0f, 20);
@@ -167,6 +180,24 @@ public class TangibleShadows
     	
     	shadowShield = new ItemShadowShield(shadowToolMaterial5);
     	RegisterHelper.registerItem(shadowShield, MODID);
+    	
+    	multiPass = new ItemMultiPass();
+    	RegisterHelper.registerItem(multiPass, MODID);
+    	
+    	gleamingHelmet = new ItemGleamingArmor(gleamingArmorMaterial, 0, "gleamingHelmet");
+    	RegisterHelper.registerItem(gleamingHelmet, MODID);
+    	
+    	gleamingChestplate = new ItemGleamingArmor(gleamingArmorMaterial, 1, "gleamingChestplate");
+    	RegisterHelper.registerItem(gleamingChestplate, MODID);
+    	
+    	gleamingLegs = new ItemGleamingArmor(gleamingArmorMaterial, 2, "gleamingLegs");
+    	RegisterHelper.registerItem(gleamingLegs, MODID);
+    	
+    	gleamingBoots = new ItemGleamingArmor(gleamingArmorMaterial, 3, "gleamingBoots");
+    	RegisterHelper.registerItem(gleamingBoots, MODID);
+    	
+    	cubicZirconium = new ItemCubicZirconium();
+    	RegisterHelper.registerItem(cubicZirconium, MODID);
     	
     	GameRegistry.addRecipe (new ItemStack(shadow), new Object[]
 			{
@@ -293,6 +324,40 @@ public class TangibleShadows
         			"xyx",
         		    " x ",
         			'x', shadowGem, 'y', Items.blaze_rod
+    			});
+    	GameRegistry.addRecipe (new ItemStack(multiPass), new Object[]
+    			{
+        			" x ",
+        			"xyx",
+        		    " x ",
+        			'x', Items.dye, 'y', Items.paper
+    			});
+    	GameRegistry.addSmelting(Items.coal, new ItemStack(TangibleShadows.cubicZirconium), 200);
+    	GameRegistry.addRecipe (new ItemStack(gleamingHelmet), new Object[]
+    			{
+        			"xxx",
+        			"x x",
+        			'x', cubicZirconium
+    			});
+    	GameRegistry.addRecipe (new ItemStack(gleamingBoots), new Object[]
+    			{
+        			"x x",
+        			"x x",
+        			'x', cubicZirconium
+    			});
+    	GameRegistry.addRecipe (new ItemStack(gleamingLegs), new Object[]
+    			{
+        			"xxx",
+        			"x x",
+        			"x x",
+        			'x', cubicZirconium
+    			});
+    	GameRegistry.addRecipe (new ItemStack(gleamingChestplate), new Object[]
+    			{
+        			"x x",
+        			"xxx",
+        			"xxx",
+        			'x', cubicZirconium
     			});
 
     	
